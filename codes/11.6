@@ -1,0 +1,10 @@
+// 토큰 조회
+public static String getBearerToken(HttpServletRequest req) {
+    String authorization = req.getHeader("Authorization");
+
+    if (authorization != null) {
+        return authorization.replace("Bearer ", "").trim(); // Bearer 값 조회
+    }
+
+    return null;
+}
